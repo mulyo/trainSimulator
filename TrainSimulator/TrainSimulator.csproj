@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Drawable.cs" />
     <Compile Include="Officer.cs" />
     <Compile Include="Operable.cs" />
     <Compile Include="Passenger.cs" />
@@ -65,11 +66,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RailwayDrawing.cs" />
     <Compile Include="Retired.cs" />
     <Compile Include="Simulator.cs" />
     <Compile Include="Station.cs" />
+    <Compile Include="StationDrawing.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Train.cs" />
+    <Compile Include="TrainDrawing.cs" />
     <Compile Include="TrainState.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

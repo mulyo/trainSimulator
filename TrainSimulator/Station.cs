@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace TrainSimulator
 {
@@ -55,8 +56,7 @@ namespace TrainSimulator
                 case 2: return Place.URQUIZA;
                 case 3: return Place.LACROZE; 
                 case 4: return Place.RETIRO; 
-                case 5: return Place.CONSTITUCION; 
-                default: return Place.SAN_MARTIN;
+                default: return Place.CONSTITUCION;
             }
         }
 
@@ -84,5 +84,6 @@ namespace TrainSimulator
             get { return terminal; }
             set { terminal = value; }
         }
+       
     }
 }

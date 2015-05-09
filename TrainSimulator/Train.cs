@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace TrainSimulator
 {
@@ -72,5 +73,7 @@ namespace TrainSimulator
             get { return currentStation; }
             set { currentStation = value; }
         }
+
+        
     }
 }

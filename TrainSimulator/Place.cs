@@ -8,7 +8,7 @@ namespace TrainSimulator
 {
     public enum Place
     {
-      DEVOTO, URQUIZA, LACROZE, RETIRO, CONSTITUCION, SAN_MARTIN,
+      DEVOTO, URQUIZA, LACROZE, RETIRO, CONSTITUCION,
 
     }
 }

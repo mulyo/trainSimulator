@@ -16,6 +16,7 @@ namespace TrainSimulator
         private Simulator simulator;
         private Bitmap stationsDrawArea;
         private Graphics graphics;
+        private Drawable drawable;
 
         public Form1()
         {
@@ -28,28 +29,9 @@ namespace TrainSimulator
             this.BackColor = Color.White;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.simulator = new Simulator();
+            
         }
-       
-        private void drawStations(Graphics g)
-        {
-            for (int i = 0, x = 0; i < 5; i++, x += 200) {
-                g.DrawImage(Properties.Resources.station1, x, 20, 150, 100);
-            }
-        }
-
-        private void drawRailway(Graphics g)
-        {
-            for (int i = 0, x = 0; i < 10; i++, x += 100)
-            {
-                g.DrawImage(Properties.Resources.rail, x, 100, 100, 90);
-            }
-        }
-
-        private void drawTrain(Graphics g)
-        {
-            g.DrawImage(Properties.Resources.train, 0, 260, 100, 50);
-        }
-
+              
         private void avanzarEstacion_Click(object sender, EventArgs e)
         {
             if (!this.simulator.Train.isEmpty()) {
@@ -60,26 +42,47 @@ namespace TrainSimulator
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+        }
+
+        private void trainPictureBox_Paint(object sender, PaintEventArgs e)
+        {
+            graphics = e.Graphics;
+            this.drawable = new TrainDrawing();
+            this.drawable.draw(graphics, 5);
+        }
+
+        private void railwayPictureBox_Paint(object sender, PaintEventArgs e)
+        {
+            graphics = e.Graphics;
+            this.drawable = new RailwayDrawing();
+            for (int i = 0, x = 0; i < 10; i++, x += 100)
+            {
+                this.drawable.draw(graphics, x);
+            }
 
         }
 
         private void stationsPictureBox_Paint(object sender, PaintEventArgs e)
         {
             graphics = e.Graphics;
-            drawStations(graphics);
-            
+            this.drawable = new StationDrawing();
+            for (int i = 0, x = 0; i < this.simulator.Stations.Count; i++, x += 200)
+            {
+                this.drawable.draw(graphics, x);
+                
+            }
         }
 
-        private void railwayPictureBox_Paint(object sender, PaintEventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            graphics = e.Graphics;
-            drawRailway(graphics);
-        }
+            Control[] ctr = this.Controls.Find("trainPictureBox", true);
 
-        private void trainPictureBox_Paint(object sender, PaintEventArgs e)
-        {
-            graphics = e.Graphics;
-            drawTrain(graphics);
+            foreach (Control cr in ctr)
+            {
+                PictureBox pb = ((PictureBox)cr);
+                pb.Location = new Point(pb.Location.X + 5, pb.Location.Y);
+            }
         }
     }
 }

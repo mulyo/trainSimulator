@@ -23,7 +23,6 @@ namespace TrainSimulator
             this.stations.Add(new Station(Place.DEVOTO, 5, true));
             this.stations.Add(new Station(Place.URQUIZA, 4, false));
             this.stations.Add(new Station(Place.LACROZE, 8, false));
-            this.stations.Add(new Station(Place.SAN_MARTIN, 7, false));
             this.stations.Add(new Station(Place.RETIRO, 10, false));
             this.stations.Add(new Station(Place.CONSTITUCION, 10, true));
         }
