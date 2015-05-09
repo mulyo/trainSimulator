@@ -1,0 +1,9 @@
+c:\users\teejay\documents\visual studio 2012\Projects\TrainSimulator\TrainSimulator\bin\Debug\TrainSimulator.exe.config
+c:\users\teejay\documents\visual studio 2012\Projects\TrainSimulator\TrainSimulator\bin\Debug\TrainSimulator.exe
+c:\users\teejay\documents\visual studio 2012\Projects\TrainSimulator\TrainSimulator\bin\Debug\TrainSimulator.pdb
+c:\users\teejay\documents\visual studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.csprojResolveAssemblyReference.cache
+c:\users\teejay\documents\visual studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.Form1.resources
+c:\users\teejay\documents\visual studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.Properties.Resources.resources
+c:\users\teejay\documents\visual studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.csproj.GenerateResource.Cache
+c:\users\teejay\documents\visual studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.exe
+c:\users\teejay\documents\visual studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.pdb
