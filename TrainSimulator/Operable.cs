@@ -8,7 +8,13 @@ namespace TrainSimulator
 {
     public abstract class Operable
     {
-        protected List<Passenger> passengers;
+        private List<Passenger> passengers;
+
+        public List<Passenger> Passengers
+        {
+            get { return passengers; }
+            set { passengers = value; }
+        }
 
         public Operable(List<Passenger> passengers) {
 

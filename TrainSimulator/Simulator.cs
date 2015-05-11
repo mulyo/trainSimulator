@@ -11,16 +11,21 @@ namespace TrainSimulator
 
         private Train train;
         private List<Station> stations;
+        private Boolean loadingFinished;
+        private Boolean unloadingFinished;
 
         public Simulator() {
             this.train = new Train();
             this.stations = new List<Station>();
+            this.loadingFinished = false;
+            this.unloadingFinished = false;
             createStations();
+            this.train.CurrentStation = this.stations[0];
         }
 
         private void createStations()
         {
-            this.stations.Add(new Station(Place.DEVOTO, 5, true));
+            this.stations.Add(new Station(Place.DEVOTO, 5, false));
             this.stations.Add(new Station(Place.URQUIZA, 4, false));
             this.stations.Add(new Station(Place.LACROZE, 8, false));
             this.stations.Add(new Station(Place.RETIRO, 10, false));
@@ -29,23 +34,46 @@ namespace TrainSimulator
 
         public void moveOn() {
             this.train.start();
+           // this.loadingFinished = false;
+           // this.unloadingFinished = false;
         }
 
-        public void setCurrentStationToTrain(Place station){
+        public void setCurrentStationToTrain(Station station){
             this.train.CurrentStation = station;
+        }
+
+        public Station getCurrentStationOfTrain() {
+            return this.train.CurrentStation;
+        }
+
+        public Station findNextStation(Place stationName) {
+            foreach (Station station in stations) {
+                if (stationName == station.StationName) {
+                    return station;
+                }
+            }
+            return null;
         }
 
         public void stopOn() {
             this.train.stop();
-            Station station = findCurrentStation(this.train.CurrentStation);
+            this.loadingFinished = false;
+            this.unloadingFinished = false;
+        }
+
+        public void movePassengers()
+        {
+           
             List<Passenger> passengersFromStation = this.train.leavePassengersOnStation();
             if (passengersFromStation.Count > 0)
             {
-                // add passengers to station list
-                populateStation(station, passengersFromStation);
+                // add passengers to station
+                populateStation(this.train.CurrentStation, passengersFromStation);
             }
-            List<Passenger> passengersToTrain = station.ticketToRide();
+            List<Passenger> passengersToTrain = this.train.CurrentStation.ticketToRide();
             this.train.getPassengersOnBoard(passengersToTrain);
+            this.loadingFinished = true;
+            this.unloadingFinished = true;
         }
 
         private static void populateStation(Station station, List<Passenger> passengersFromStation)
@@ -55,17 +83,7 @@ namespace TrainSimulator
                 station.getIn(passenger);
             }
         }
-
-        private Station findCurrentStation(Place place)
-        {
-            foreach (Station station in stations) {
-                if (station.StationName == place) {
-                    return station;
-                }
-            }
-            return null;
-        }
-
+               
         public Train Train
         {
             get { return train; }
@@ -76,6 +94,18 @@ namespace TrainSimulator
         {
             get { return stations; }
             set { stations = value; }
+        }
+
+        public Boolean LoadingFinished
+        {
+            get { return loadingFinished; }
+            set { loadingFinished = value; }
+        }
+
+        public Boolean UnloadingFinished
+        {
+            get { return unloadingFinished; }
+            set { unloadingFinished = value; }
         }
     }
 }

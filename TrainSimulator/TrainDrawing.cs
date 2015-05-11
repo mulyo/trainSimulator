@@ -12,15 +12,15 @@ namespace TrainSimulator
 
         public TrainDrawing()
         {
-            this.y = 150;
+            this.Y = 150;
             this.width = 100;
             this.height = 50;
         }
 
         public override void draw(Graphics graphics, int x)
         {
-            this.x = x;
-            graphics.DrawImage(Properties.Resources.train, this.x, this.y, this.width, this.height);
+            this.X = x;
+            graphics.DrawImage(Properties.Resources.train, this.X, this.Y, this.width, this.height);
         }
     }
 }

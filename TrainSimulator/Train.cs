@@ -12,7 +12,7 @@ namespace TrainSimulator
 
         private const int capacity = 30;
         private TrainState state;
-        private Place currentStation;
+        private Station currentStation;
 
         public TrainState State
         {
@@ -21,7 +21,6 @@ namespace TrainSimulator
         }
 
         public Train() : base(){
-            this.currentStation = Place.DEVOTO;
             stop();
         }
 
@@ -36,7 +35,11 @@ namespace TrainSimulator
         }
 
         public Boolean isEmpty() {
-            return this.passengers.Count == 0;
+            return this.Passengers.Count == 0;
+        }
+
+        public Boolean isStopped() {
+            return this.state == TrainState.STOP;
         }
 
         public void getPassengersOnBoard(List<Passenger> passengersFromStation) {
@@ -53,22 +56,25 @@ namespace TrainSimulator
         public List<Passenger> leavePassengersOnStation() {
             
             List<Passenger> whoLeave = new List<Passenger>();
-            if (this.state == TrainState.STOP && this.passengers.Count > 0)
+            if (this.state == TrainState.STOP && this.Passengers.Count > 0)
             {
-                foreach (Passenger p in this.passengers)
+                foreach (Passenger p in this.Passengers)
                 {
-                    if (p.Destiny == this.currentStation)
+                    if (p.Destiny == this.currentStation.StationName)
                     {
                         whoLeave.Add(p);
-                        this.getOut(p);
                     }
+                }
+
+                foreach (Passenger p in whoLeave) {
+                    this.getOut(p);
                 }
                 start();
             }
             return whoLeave;
         }
 
-        public Place CurrentStation
+        public Station CurrentStation
         {
             get { return currentStation; }
             set { currentStation = value; }

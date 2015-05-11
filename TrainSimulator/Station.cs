@@ -39,6 +39,7 @@ namespace TrainSimulator
                     destinyId = destinyRand.Next(1, 7);   
                     destiny = generateDestiny(destinyId);
                 }while(destiny == stationName);
+                
                 type = generatePassengerType(passTypeId);
                 Passenger p = new Passenger(type, destiny);
                 this.getIn(p);

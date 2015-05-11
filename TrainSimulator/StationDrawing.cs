@@ -10,16 +10,25 @@ namespace TrainSimulator
     public class StationDrawing : Drawable
     {
 
-        public StationDrawing() {
-            this.y = 20;
+        private Place stationName;
+
+        public StationDrawing(Place stationName) {
+            this.Y = 20;
             this.width = 150;
             this.height = 100;
+            this.stationName = stationName;
         }
 
         public override void draw(Graphics graphics, int x)
         {
-            this.x = x;
-            graphics.DrawImage(Properties.Resources.station1, this.x, this.y, this.width, this.height);
+            this.X = x;
+            graphics.DrawImage(Properties.Resources.station1, this.X, this.Y, this.width, this.height);
+        }
+
+        public Place StationName
+        {
+            get { return stationName; }
+            set { stationName = value; }
         }
     }
 }
