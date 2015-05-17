@@ -17,7 +17,6 @@ namespace TrainSimulator
         private Graphics graphics;
         private Drawable drawable;
         private List<Drawable> stations;
-        private int stationOrder = 0;
         private int passengersCounter = 0;
         private int maxStationPassengers = 0;
         private Control[] pbFromStationToTrain;
@@ -29,6 +28,7 @@ namespace TrainSimulator
             this.BackColor = Color.White;
             this.mostrarEstadisticasToolStripMenuItem.Enabled = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.avanzarTrenBtn.Enabled = false;
             this.simulator = new Simulator();
             this.stations = new List<Drawable>();
         }
@@ -181,22 +181,31 @@ namespace TrainSimulator
            Point location = this.trainPictureBox.Location;
            this.trainPictureBox.Location = new Point(location.X + 20, location.Y);
            Station station = this.simulator.getCurrentStationOfTrain();
-           StationDrawing next = null;
+           StationDrawing nextStationDrawing = null;
            if (!station.Terminal)
            {
-               next = (StationDrawing)stations[stationOrder + 1];
-               if (this.trainPictureBox.Location.X >= next.X)
+               Station nextStation = this.simulator.findNextStation();
+               nextStationDrawing = findNextStationDrawing(nextStation);
+               if (this.trainPictureBox.Location.X >= nextStationDrawing.X)
                {
                    trainTimer.Stop();
                    this.simulator.Train.stop();
-                   this.simulator.setCurrentStationToTrain(this.simulator.findNextStation(next.StationName));
-                   this.stationOrder++;                   
+                   this.simulator.setCurrentStationToTrain(this.simulator.findNextStation(nextStationDrawing.StationName));
                    this.operarGenteBtn.Enabled = true;
                }
            }
-           else {
-               stationOrder = 0;
-           }
+        }
+
+        private StationDrawing findNextStationDrawing(Station station)
+        {
+            for (int i = 0; i < this.stations.Count; i++)
+            {
+                if (((StationDrawing)this.stations[i]).StationName == station.StationName)
+                {
+                    return (StationDrawing)this.stations[i];
+                }
+            }
+            return null;
         }
 
         private void mostrarEstadisticasToolStripMenuItem_Click(object sender, EventArgs e)

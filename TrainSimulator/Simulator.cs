@@ -59,6 +59,19 @@ namespace TrainSimulator
             return null;
         }
 
+        public Station findNextStation()
+        {
+            Station currentStation = this.getCurrentStationOfTrain();
+            for (int i = 0; i < this.stations.Count; i++)
+            {
+                if (currentStation == this.stations[i])
+                {
+                    return this.stations[i + 1];
+                }
+            }
+            return null;
+        }
+
         public void stopOn() {
             this.train.stop();
             this.loadingFinished = false;
@@ -71,7 +84,6 @@ namespace TrainSimulator
             List<Passenger> passengersFromTrain = this.train.leavePassengersOnStation();
             if (passengersFromTrain.Count > 0)
             {
-                // ver si el hecho de usar la estacion del tren no acarrea bugs en lugar de usar la 
                 populateStation(getCurrentStationOfTrain(), passengersFromTrain);
             }
             List<Passenger> passengersFromStation = getCurrentStationOfTrain().ticketToRide();
@@ -87,7 +99,7 @@ namespace TrainSimulator
                 station.getIn(passenger);
             }
         }
-               
+
         public Train Train
         {
             get { return train; }
