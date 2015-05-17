@@ -53,6 +53,13 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Drawable.cs" />
+    <Compile Include="FormStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStatistics.Designer.cs">
+      <DependentUpon>FormStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenderEnum.cs" />
     <Compile Include="Officer.cs" />
     <Compile Include="Operable.cs" />
     <Compile Include="Passenger.cs" />
@@ -77,6 +84,9 @@
     <Compile Include="TrainState.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStatistics.resx">
+      <DependentUpon>FormStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,6 +129,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\employee.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lastnames.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaleNames.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FemaleNames.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

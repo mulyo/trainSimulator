@@ -11,7 +11,12 @@ namespace TrainSimulator
     {
 
        public Employee() : base(PassengerTypeEnum.EMPLOYEE, Properties.Resources.employee) {
-           this.speed = 6;
+           this.speed = 20;
+           this.gender = GenderEnum.FEMALE;
+       }
+
+       public override String showTypeText() {
+           return "Empleado";
        }
     }
 }

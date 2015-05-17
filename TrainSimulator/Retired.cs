@@ -11,7 +11,13 @@ namespace TrainSimulator
     {
 
        public Retired() : base(PassengerTypeEnum.RETIRED, Properties.Resources.retired) {
-           this.speed = 6;
+           this.speed = 20;
+           this.gender = GenderEnum.FEMALE;
+       }
+
+       public override String showTypeText()
+       {
+           return "Jubilado";
        }
     }
 }

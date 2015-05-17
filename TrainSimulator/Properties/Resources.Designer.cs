@@ -81,6 +81,206 @@ namespace TrainSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Natalia
+        ///Yanina
+        ///Nelida
+        ///Maria
+        ///Vanesa
+        ///Miriam
+        ///Mirta
+        ///Rosa
+        ///Gina
+        ///Oriana
+        ///Carmen
+        ///Paula
+        ///Martina
+        ///Gisel
+        ///Gisella
+        ///Antonella
+        ///Veronica
+        ///Viviana
+        ///Susana
+        ///Griselda
+        ///Alejandra
+        ///Marcela
+        ///Carla
+        ///Nayla
+        ///Romina
+        ///Erica
+        ///Macarena
+        ///Carina
+        ///Cecilia
+        ///Marta
+        ///Brenda
+        ///Florencia
+        ///Fatima
+        ///Johana
+        ///Juana
+        ///Rigoberta
+        ///Rocio
+        ///Agustina
+        ///Mia
+        ///Janet
+        ///Celeste
+        ///Daiana
+        ///Lorena
+        ///Norma
+        ///Sandra
+        ///Debora
+        ///Andrea
+        ///Julia
+        ///Daniela
+        ///Laura
+        ///Mariana
+        ///Milena
+        ///Marianela
+        ///Noelia
+        ///Fernanda
+        ///Teresa
+        ///Gladis
+        ///Tatiana
+        ///Gabriela
+        ///Graciela
+        ///Soledad
+        ///Sol
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string FemaleNames {
+            get {
+                return ResourceManager.GetString("FemaleNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biasoli
+        ///Gomez
+        ///Lopez
+        ///Lamanuzzi
+        ///Garcia
+        ///Gonzalez
+        ///Fernandez
+        ///Hernandez
+        ///Martinez
+        ///Sala
+        ///Farias
+        ///Mercado
+        ///Barovero
+        ///Chiarini
+        ///Bottachi
+        ///Sanchez
+        ///Mammana
+        ///Gallardo
+        ///Ballester
+        ///Tavella
+        ///Magallanes
+        ///Rusca
+        ///Veron
+        ///Cambiasso
+        ///Rojas
+        ///Pisculichi
+        ///Vangioni
+        ///Gutierrez
+        ///Driussi
+        ///Funes Mori
+        ///Pezzella
+        ///Haussmann
+        ///Dantur
+        ///Null
+        ///Franco
+        ///Galeano
+        ///Morales
+        ///Carrio
+        ///Silvani
+        ///Toresani
+        ///Miglietti
+        ///Goncalves
+        ///Kranevitter
+        ///Ponzio
+        ///Peña
+        ///Bravo
+        ///Marco
+        ///Marchioni
+        ///Zsechet
+        ///Valido
+        ///Lobato
+        ///.
+        /// </summary>
+        internal static string Lastnames {
+            get {
+                return ResourceManager.GetString("Lastnames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Andres
+        ///Matias
+        ///Hugo
+        ///Javier
+        ///Ricardo
+        ///Martin
+        ///Guillermo
+        ///Pablo
+        ///Juan
+        ///Pedro
+        ///Mariano
+        ///Nicolas
+        ///Ivan
+        ///Miguel
+        ///Leonardo
+        ///Leandro
+        ///Leonel
+        ///Carlos
+        ///Osvaldo
+        ///Omar
+        ///Alberto
+        ///Roberto
+        ///Ruben
+        ///Hernan
+        ///Emiliano
+        ///Federico
+        ///Fernando
+        ///Rodrigo
+        ///Rodolfo
+        ///Eduardo
+        ///Bautista
+        ///Ignacio
+        ///Jose
+        ///Jorge
+        ///Sebastian
+        ///Adrian
+        ///Julio
+        ///Julian
+        ///Victor
+        ///Gaston
+        ///Geronimo
+        ///Ezequiel
+        ///Laureano
+        ///Diego
+        ///Mauricio
+        ///Maximo
+        ///German
+        ///Gerardo
+        ///Gabriel
+        ///Damian
+        ///Bruno
+        ///Francisco
+        ///Cesar
+        ///Lucas
+        ///Leopoldo
+        ///Alejandro
+        ///Alex
+        ///Alan
+        ///Alexis
+        ///Marcelo
+        ///.
+        /// </summary>
+        internal static string MaleNames {
+            get {
+                return ResourceManager.GetString("MaleNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap officer {

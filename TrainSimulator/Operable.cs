@@ -31,11 +31,19 @@ namespace TrainSimulator
             this.passengers.Add(passenger);
         }
 
-        public List<Passenger> getAllOut()
+        public List<Passenger> getAllOut(Place destiny)
         {
+            // se deberia evitar que los pasajeros que acaban de descender del tren a la estacion actual no sean tenidos en cuenta aca. El bug hace que los que descendieron del tren inmediatamente vuelvan a subir al tren!!!
             List<Passenger> aux = new List<Passenger>();
-            aux.AddRange(this.passengers);
-            this.passengers.Clear();
+            foreach(Passenger passenger in this.passengers){
+                if(passenger.Destiny != destiny){
+                    aux.Add(passenger);
+                }
+            }
+
+
+            //aux.AddRange(this.passengers);
+            //this.passengers.Clear();
             return aux;
         }
 

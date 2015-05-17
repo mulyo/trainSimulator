@@ -38,15 +38,19 @@
             this.operarGenteBtn = new System.Windows.Forms.Button();
             this.fromTrainToStationTimer = new System.Windows.Forms.Timer(this.components);
             this.fromStationToTrainTimer = new System.Windows.Forms.Timer(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostrarEstadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.trainPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.railwayPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationsPictureBox)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 21);
+            this.label1.Location = new System.Drawing.Point(12, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 1;
@@ -54,7 +58,7 @@
             // 
             // avanzarTrenBtn
             // 
-            this.avanzarTrenBtn.Location = new System.Drawing.Point(34, 88);
+            this.avanzarTrenBtn.Location = new System.Drawing.Point(194, 69);
             this.avanzarTrenBtn.Name = "avanzarTrenBtn";
             this.avanzarTrenBtn.Size = new System.Drawing.Size(84, 24);
             this.avanzarTrenBtn.TabIndex = 2;
@@ -95,7 +99,7 @@
             // 
             // operarGenteBtn
             // 
-            this.operarGenteBtn.Location = new System.Drawing.Point(34, 44);
+            this.operarGenteBtn.Location = new System.Drawing.Point(91, 62);
             this.operarGenteBtn.Name = "operarGenteBtn";
             this.operarGenteBtn.Size = new System.Drawing.Size(84, 38);
             this.operarGenteBtn.TabIndex = 8;
@@ -106,6 +110,31 @@
             // fromStationToTrainTimer
             // 
             this.fromStationToTrainTimer.Tick += new System.EventHandler(this.fromStationToTrain_Tick);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(956, 24);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mostrarEstadisticasToolStripMenuItem});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // mostrarEstadisticasToolStripMenuItem
+            // 
+            this.mostrarEstadisticasToolStripMenuItem.Name = "mostrarEstadisticasToolStripMenuItem";
+            this.mostrarEstadisticasToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.mostrarEstadisticasToolStripMenuItem.Text = "Mostrar Estadisticas";
+            this.mostrarEstadisticasToolStripMenuItem.Click += new System.EventHandler(this.mostrarEstadisticasToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -118,11 +147,15 @@
             this.Controls.Add(this.trainPictureBox);
             this.Controls.Add(this.avanzarTrenBtn);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.trainPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.railwayPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationsPictureBox)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,6 +172,9 @@
         private System.Windows.Forms.Button operarGenteBtn;
         private System.Windows.Forms.Timer fromTrainToStationTimer;
         private System.Windows.Forms.Timer fromStationToTrainTimer;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mostrarEstadisticasToolStripMenuItem;
     }
 }
 

@@ -12,11 +12,14 @@ namespace TrainSimulator
         private PassengerTypeEnum type;
         private Bitmap image;
         protected int speed;
+        protected GenderEnum gender;
 
         public PassengerType(PassengerTypeEnum type, Bitmap image) {
             this.type = type;
             this.image = image;
         }
+
+        public abstract String showTypeText();
 
         public PassengerTypeEnum Type
         {
@@ -34,6 +37,12 @@ namespace TrainSimulator
         {
             get { return speed; }
             set { speed = value; }
+        }
+
+        public GenderEnum Gender
+        {
+            get { return gender; }
+            set { gender = value; }
         }
     }
 }

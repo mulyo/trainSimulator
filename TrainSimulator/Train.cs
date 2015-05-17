@@ -43,13 +43,13 @@ namespace TrainSimulator
         }
 
         public void getPassengersOnBoard(List<Passenger> passengersFromStation) {
-            if (this.state == TrainState.STOP)
-            {
+           // if (this.state == TrainState.STOP)
+           // {
                 for (int i = 0; i < capacity && i < passengersFromStation.Count; i++) {
                     this.getIn(passengersFromStation[i]);
                 }
                 start();
-            }
+           // }
             
         }
 
@@ -69,7 +69,7 @@ namespace TrainSimulator
                 foreach (Passenger p in whoLeave) {
                     this.getOut(p);
                 }
-                start();
+                start(); //podria estar generando problemas este start
             }
             return whoLeave;
         }

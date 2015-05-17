@@ -13,7 +13,7 @@ namespace TrainSimulator
     public partial class Form1 : Form
     {
 
-        private Simulator simulator;
+        private Simulator simulator;        
         private Graphics graphics;
         private Drawable drawable;
         private List<Drawable> stations;
@@ -21,11 +21,13 @@ namespace TrainSimulator
         private int passengersCounter = 0;
         private int maxStationPassengers = 0;
         private Control[] pbFromStationToTrain;
+        private FormStatistics statsForm;
         
         public Form1()
         {
             InitializeComponent();
             this.BackColor = Color.White;
+            this.mostrarEstadisticasToolStripMenuItem.Enabled = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.simulator = new Simulator();
             this.stations = new List<Drawable>();
@@ -70,13 +72,7 @@ namespace TrainSimulator
                 this.maxStationPassengers = stationPassengers.Count;
                 List<Passenger> trainPassengers = this.simulator.Train.Passengers;
 
-                if (trainPassengers.Count > 0)
-                {
-                    // hacer animacion grafica de pasajeros bajando del tren
-                }
-               
-                this.simulator.UnloadingFinished = true;
-
+                
                 if (stationPassengers.Count > 0)
                 {
                     StationDrawing drawStation = findStationDrawing(currentStation);
@@ -84,8 +80,9 @@ namespace TrainSimulator
                     this.stationsPictureBox.SendToBack();
 
                     passengersCounter = 0;
-                    foreach (Passenger passenger in stationPassengers) {
-                        
+                    foreach (Passenger passenger in stationPassengers)
+                    {
+
                         PassengerType passengerType = passenger.Type;
                         Image image = passengerType.Image;
                         PictureBox pb = new PictureBox();
@@ -96,14 +93,26 @@ namespace TrainSimulator
                         pb.Height = image.Height;
                         pb.Width = image.Width;
                         pb.Visible = false;
+                        pb.Tag = passenger;
                         this.Controls.Add(pb);
                     }
-                    
+
                     // hacer animacion grafica de pasajeros subiendo al tren
-                    fromStationToTrainTimer.Start();
                     Control[] ctr = this.Controls.Find("passengerToTrain", true);
                     this.pbFromStationToTrain = ctr;
+                    fromStationToTrainTimer.Start();
                 }
+                else
+                {
+                  this.avanzarTrenBtn.Enabled = true;
+                }
+                
+                if (trainPassengers.Count > 0)
+                {
+                    // hacer animacion grafica de pasajeros bajando del tren
+                }
+               
+                this.simulator.UnloadingFinished = true;
             }
         }
 
@@ -115,6 +124,10 @@ namespace TrainSimulator
                 this.simulator.movePassengers();
                 this.simulator.moveOn();
                 this.trainTimer.Start();
+                if(this.simulator.getCurrentStationOfTrain().Terminal){
+                    this.mostrarEstadisticasToolStripMenuItem.Enabled = true;
+                    statsForm = new FormStatistics(this);
+                }
             }
 
         }
@@ -131,7 +144,7 @@ namespace TrainSimulator
 
         private void fromStationToTrain_Tick(object sender, EventArgs e)
         {
-
+                        
             PictureBox pb = (PictureBox)pbFromStationToTrain[passengersCounter];
             Station station = this.simulator.getCurrentStationOfTrain();
             Passenger passenger = station.Passengers[passengersCounter];
@@ -166,7 +179,7 @@ namespace TrainSimulator
         private void train_Tick(object sender, EventArgs e)
         {
            Point location = this.trainPictureBox.Location;
-           this.trainPictureBox.Location = new Point(location.X + 2, location.Y);
+           this.trainPictureBox.Location = new Point(location.X + 20, location.Y);
            Station station = this.simulator.getCurrentStationOfTrain();
            StationDrawing next = null;
            if (!station.Terminal)
@@ -185,6 +198,15 @@ namespace TrainSimulator
                stationOrder = 0;
            }
         }
-        
+
+        private void mostrarEstadisticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            statsForm.ShowDialog(this);
+        }
+
+        public Simulator Simulator
+        {
+            get { return simulator; }
+        }
     }
 }

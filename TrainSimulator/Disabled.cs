@@ -10,7 +10,13 @@ namespace TrainSimulator
     {
         
         public Disabled() : base(PassengerTypeEnum.DISABLED, Properties.Resources.disabled) {
-            this.speed = 4;
+            this.speed = 20;
+            this.gender = GenderEnum.MALE;
+        }
+
+        public override String showTypeText()
+        {
+            return "Discapacitado";
         }
     }
 }

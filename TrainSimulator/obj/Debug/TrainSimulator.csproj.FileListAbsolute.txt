@@ -2,6 +2,7 @@ C:\Users\Teejay\Documents\Visual Studio 2012\Projects\TrainSimulator\TrainSimula
 C:\Users\Teejay\Documents\Visual Studio 2012\Projects\TrainSimulator\TrainSimulator\bin\Debug\TrainSimulator.exe
 C:\Users\Teejay\Documents\Visual Studio 2012\Projects\TrainSimulator\TrainSimulator\bin\Debug\TrainSimulator.pdb
 C:\Users\Teejay\Documents\Visual Studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.Form1.resources
+C:\Users\Teejay\Documents\Visual Studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.FormStatistics.resources
 C:\Users\Teejay\Documents\Visual Studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.Properties.Resources.resources
 C:\Users\Teejay\Documents\Visual Studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.csproj.GenerateResource.Cache
 C:\Users\Teejay\Documents\Visual Studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.exe
