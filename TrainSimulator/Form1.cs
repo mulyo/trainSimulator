@@ -22,6 +22,7 @@ namespace TrainSimulator
         private Control[] pbFromStationToTrain;
         private FormStatistics statsForm;
         
+        
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +32,10 @@ namespace TrainSimulator
             this.avanzarTrenBtn.Enabled = false;
             this.simulator = new Simulator();
             this.stations = new List<Drawable>();
+            this.prbEstado.Minimum = 0;
+            this.prbEstado.Minimum = 30;
+
+
         }
         
         private void trainPictureBox_Paint(object sender, PaintEventArgs e)
@@ -95,6 +100,9 @@ namespace TrainSimulator
                         pb.Visible = false;
                         pb.Tag = passenger;
                         this.Controls.Add(pb);
+
+                        this.prbEstado.Value += 1;
+
                     }
 
                     // hacer animacion grafica de pasajeros subiendo al tren
@@ -110,6 +118,7 @@ namespace TrainSimulator
                 if (trainPassengers.Count > 0)
                 {
                     // hacer animacion grafica de pasajeros bajando del tren
+                    //this.prbEstado.Value -=1;
                 }
                
                 this.simulator.UnloadingFinished = true;
@@ -217,5 +226,6 @@ namespace TrainSimulator
         {
             get { return simulator; }
         }
+
     }
 }

@@ -9,10 +9,11 @@ namespace TrainSimulator
 {
     public class Train : Operable
     {
-
+        
         private const int capacity = 30;
         private TrainState state;
         private Station currentStation;
+        
 
         public TrainState State
         {
@@ -45,6 +46,8 @@ namespace TrainSimulator
         public void getPassengersOnBoard(List<Passenger> passengersFromStation) {
            // if (this.state == TrainState.STOP)
            // {
+         
+
                 for (int i = 0; i < capacity && i < passengersFromStation.Count; i++) {
                     this.getIn(passengersFromStation[i]);
                 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
             this.avanzarTrenBtn = new System.Windows.Forms.Button();
             this.trainPictureBox = new System.Windows.Forms.PictureBox();
             this.railwayPictureBox = new System.Windows.Forms.PictureBox();
@@ -41,26 +40,22 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarEstadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.prbEstado = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trainPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.railwayPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationsPictureBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Comandos:";
             // 
             // avanzarTrenBtn
             // 
-            this.avanzarTrenBtn.Location = new System.Drawing.Point(194, 69);
+            this.avanzarTrenBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avanzarTrenBtn.Location = new System.Drawing.Point(188, 17);
             this.avanzarTrenBtn.Name = "avanzarTrenBtn";
-            this.avanzarTrenBtn.Size = new System.Drawing.Size(84, 24);
+            this.avanzarTrenBtn.Size = new System.Drawing.Size(84, 38);
             this.avanzarTrenBtn.TabIndex = 2;
             this.avanzarTrenBtn.Text = "Avanzar tren";
             this.avanzarTrenBtn.UseVisualStyleBackColor = true;
@@ -99,7 +94,8 @@
             // 
             // operarGenteBtn
             // 
-            this.operarGenteBtn.Location = new System.Drawing.Point(91, 62);
+            this.operarGenteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.operarGenteBtn.Location = new System.Drawing.Point(81, 17);
             this.operarGenteBtn.Name = "operarGenteBtn";
             this.operarGenteBtn.Size = new System.Drawing.Size(84, 38);
             this.operarGenteBtn.TabIndex = 8;
@@ -136,26 +132,59 @@
             this.mostrarEstadisticasToolStripMenuItem.Text = "Mostrar Estadisticas";
             this.mostrarEstadisticasToolStripMenuItem.Click += new System.EventHandler(this.mostrarEstadisticasToolStripMenuItem_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.prbEstado);
+            this.groupBox1.Controls.Add(this.operarGenteBtn);
+            this.groupBox1.Controls.Add(this.avanzarTrenBtn);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 24);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(956, 68);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Comandos";
+            // 
+            // prbEstado
+            // 
+            this.prbEstado.Location = new System.Drawing.Point(507, 20);
+            this.prbEstado.Name = "prbEstado";
+            this.prbEstado.Size = new System.Drawing.Size(437, 32);
+            this.prbEstado.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(358, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Estado de Capacidad ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 598);
-            this.Controls.Add(this.operarGenteBtn);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.stationsPictureBox);
             this.Controls.Add(this.railwayPictureBox);
             this.Controls.Add(this.trainPictureBox);
-            this.Controls.Add(this.avanzarTrenBtn);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Train Simulator - Fernández y Biasoli";
             ((System.ComponentModel.ISupportInitialize)(this.trainPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.railwayPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationsPictureBox)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,7 +192,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button avanzarTrenBtn;
         private System.Windows.Forms.PictureBox trainPictureBox;
         private System.Windows.Forms.PictureBox railwayPictureBox;
@@ -175,6 +203,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostrarEstadisticasToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ProgressBar prbEstado;
+        private System.Windows.Forms.Label label1;
     }
 }
 

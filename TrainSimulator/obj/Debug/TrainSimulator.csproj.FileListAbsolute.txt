@@ -8,3 +8,13 @@ C:\Users\Teejay\Documents\Visual Studio 2012\Projects\TrainSimulator\TrainSimula
 C:\Users\Teejay\Documents\Visual Studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.exe
 C:\Users\Teejay\Documents\Visual Studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.pdb
 C:\Users\Teejay\Documents\Visual Studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.csprojResolveAssemblyReference.cache
+D:\MARTI\UCES\4to Cuatrimestre\Programación GUI 1\PARCIAL\TrainSimulator\TrainSimulator\bin\Debug\TrainSimulator.exe.config
+D:\MARTI\UCES\4to Cuatrimestre\Programación GUI 1\PARCIAL\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.exe
+D:\MARTI\UCES\4to Cuatrimestre\Programación GUI 1\PARCIAL\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.pdb
+D:\MARTI\UCES\4to Cuatrimestre\Programación GUI 1\PARCIAL\TrainSimulator\TrainSimulator\bin\Debug\TrainSimulator.exe
+D:\MARTI\UCES\4to Cuatrimestre\Programación GUI 1\PARCIAL\TrainSimulator\TrainSimulator\bin\Debug\TrainSimulator.pdb
+D:\MARTI\UCES\4to Cuatrimestre\Programación GUI 1\PARCIAL\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.csprojResolveAssemblyReference.cache
+D:\MARTI\UCES\4to Cuatrimestre\Programación GUI 1\PARCIAL\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.Form1.resources
+D:\MARTI\UCES\4to Cuatrimestre\Programación GUI 1\PARCIAL\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.FormStatistics.resources
+D:\MARTI\UCES\4to Cuatrimestre\Programación GUI 1\PARCIAL\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.Properties.Resources.resources
+D:\MARTI\UCES\4to Cuatrimestre\Programación GUI 1\PARCIAL\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.csproj.GenerateResource.Cache
