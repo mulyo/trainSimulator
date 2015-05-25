@@ -17,6 +17,7 @@ namespace TrainSimulator
         private Graphics graphics;
         private Drawable drawable;
         private List<Drawable> stations;
+        private List<Stretch> stretches;
         private int passengersCounter = 0;
         private int maxStationPassengers = 0;
         private Control[] pbFromStationToTrain;
@@ -32,6 +33,7 @@ namespace TrainSimulator
             this.avanzarTrenBtn.Enabled = false;
             this.simulator = new Simulator();
             this.stations = new List<Drawable>();
+            this.stretches = new List<Stretch>();
             this.prbEstado.Minimum = 0;
             this.prbEstado.Minimum = 30;
 
@@ -99,6 +101,7 @@ namespace TrainSimulator
                         pb.Width = image.Width;
                         pb.Visible = false;
                         pb.Tag = passenger;
+                        setEventHandler(pb);
                         this.Controls.Add(pb);
 
                         this.prbEstado.Value += 1;
@@ -125,6 +128,14 @@ namespace TrainSimulator
             }
         }
 
+        private static void setEventHandler(PictureBox pb)
+        {
+            pb.Click += (s, e) => {
+                Carnet carnet = new Carnet((Passenger)pb.Tag);
+                carnet.Show();
+            };
+        }
+
         private void avanzarTrenBtn_Click(object sender, EventArgs e)
         {
             if (this.simulator.UnloadingFinished && this.simulator.LoadingFinished)
@@ -133,9 +144,14 @@ namespace TrainSimulator
                 this.simulator.movePassengers();
                 this.simulator.moveOn();
                 this.trainTimer.Start();
-                if(this.simulator.getCurrentStationOfTrain().Terminal){
+                Station currentStation = this.simulator.getCurrentStationOfTrain();
+                if (currentStation.Terminal)
+                {
                     this.mostrarEstadisticasToolStripMenuItem.Enabled = true;
                     statsForm = new FormStatistics(this);
+                }
+                else {
+                    this.stretches.Add(new Stretch(PlaceToString.showText(currentStation.StationName) + " - " + PlaceToString.showText(this.simulator.findNextStation().StationName), this.simulator.Train.Passengers.Count));
                 }
             }
 
@@ -193,6 +209,7 @@ namespace TrainSimulator
            StationDrawing nextStationDrawing = null;
            if (!station.Terminal)
            {
+               prbTrain.Value += this.simulator.Train.Speed;
                Station nextStation = this.simulator.findNextStation();
                nextStationDrawing = findNextStationDrawing(nextStation);
                if (this.trainPictureBox.Location.X >= nextStationDrawing.X)
@@ -227,5 +244,10 @@ namespace TrainSimulator
             get { return simulator; }
         }
 
+        public List<Stretch> Stretches
+        {
+            get { return stretches; }
+            set { stretches = value; }
+        }
     }
 }

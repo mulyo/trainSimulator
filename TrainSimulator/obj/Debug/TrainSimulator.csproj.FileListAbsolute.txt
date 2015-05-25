@@ -18,3 +18,4 @@ D:\MARTI\UCES\4to Cuatrimestre\Programación GUI 1\PARCIAL\TrainSimulator\TrainS
 D:\MARTI\UCES\4to Cuatrimestre\Programación GUI 1\PARCIAL\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.FormStatistics.resources
 D:\MARTI\UCES\4to Cuatrimestre\Programación GUI 1\PARCIAL\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.Properties.Resources.resources
 D:\MARTI\UCES\4to Cuatrimestre\Programación GUI 1\PARCIAL\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.csproj.GenerateResource.Cache
+c:\Users\Teejay\Documents\Visual Studio 2012\Projects\TrainSimulator\TrainSimulator\obj\Debug\TrainSimulator.Carnet.resources

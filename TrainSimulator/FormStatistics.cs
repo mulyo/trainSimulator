@@ -14,17 +14,34 @@ namespace TrainSimulator
     {
 
         private List<Station> stations;
+        private List<Stretch> stretches;
 
         public FormStatistics(Form1 parent)
         {
             InitializeComponent();
             this.stations = parent.Simulator.Stations;
+            this.stretches = parent.Stretches;
             cbStations.Items.AddRange(stations.ToArray());
             tbStatistics.TabPages[0].Text = "Principal";
             tbStatistics.TabPages[1].Text = "Datos";
             setStationMostConcurred();
             setStationLessConcurred();
+            setStretchMostConcurred();
 
+        }
+
+        public void setStretchMostConcurred() {
+            int max = 0;
+            Stretch maxStretch = null;
+
+            foreach (Stretch stretch in stretches) {
+                if (stretch.Passengers > max) {
+                    max = stretch.Passengers;
+                    maxStretch = stretch;
+                }
+            }
+            String result = (max > 1) ? maxStretch.Name + " (" + max + " pasajeros)" : maxStretch.Name + " (" + max + " pasajero)";
+            this.tbStretch.Text = result;
         }
 
         private void cbStations_SelectedIndexChanged(object sender, EventArgs e)
@@ -59,7 +76,7 @@ namespace TrainSimulator
             Passenger passenger = passengers[indexPassenger];
             dgPassengers.Rows.Clear();
             DataGridViewRow row = new DataGridViewRow();
-            row.CreateCells(dgPassengers, new String[] { passenger.FirstName, passenger.LastName, passenger.Type.showTypeText(), PlaceToString.showText(passenger.Origin), PlaceToString.showText(passenger.Destiny) });
+            row.CreateCells(dgPassengers, new String[] { passenger.FirstName, passenger.LastName, passenger.Birth.ToString("dd/MM/yyyy"), passenger.Type.showTypeText(), PlaceToString.showText(passenger.Origin), PlaceToString.showText(passenger.Destiny) });
             dgPassengers.Rows.Add(row);
             dgPassengers.Visible = true;
         }

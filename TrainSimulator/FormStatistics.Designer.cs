@@ -35,14 +35,10 @@
             this.tbStatistics = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgPassengers = new System.Windows.Forms.DataGridView();
-            this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.origin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.destiny = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panelStats = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.tbTypeSum = new System.Windows.Forms.TextBox();
             this.Disabled = new System.Windows.Forms.RadioButton();
             this.Retired = new System.Windows.Forms.RadioButton();
@@ -58,7 +54,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbEstacionMasConc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.origin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destiny = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblStretch = new System.Windows.Forms.Label();
+            this.tbStretch = new System.Windows.Forms.TextBox();
             this.gbStations.SuspendLayout();
             this.tbStatistics.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -140,42 +143,17 @@
             this.dgPassengers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.firstName,
             this.lastName,
+            this.Birth,
             this.type,
             this.origin,
             this.destiny});
             this.dgPassengers.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgPassengers.Location = new System.Drawing.Point(35, 262);
+            this.dgPassengers.Location = new System.Drawing.Point(7, 262);
             this.dgPassengers.Name = "dgPassengers";
             this.dgPassengers.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgPassengers.Size = new System.Drawing.Size(558, 62);
+            this.dgPassengers.Size = new System.Drawing.Size(635, 62);
             this.dgPassengers.TabIndex = 5;
             this.dgPassengers.Visible = false;
-            // 
-            // firstName
-            // 
-            this.firstName.HeaderText = "Nombre";
-            this.firstName.Name = "firstName";
-            // 
-            // lastName
-            // 
-            this.lastName.HeaderText = "Apellido";
-            this.lastName.Name = "lastName";
-            // 
-            // type
-            // 
-            this.type.HeaderText = "Type";
-            this.type.Name = "type";
-            this.type.ReadOnly = true;
-            // 
-            // origin
-            // 
-            this.origin.HeaderText = "Origen";
-            this.origin.Name = "origin";
-            // 
-            // destiny
-            // 
-            this.destiny.HeaderText = "Destino";
-            this.destiny.Name = "destiny";
             // 
             // label2
             // 
@@ -188,6 +166,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.tbStretch);
+            this.tabPage2.Controls.Add(this.lblStretch);
             this.tabPage2.Controls.Add(this.panelStats);
             this.tabPage2.Controls.Add(this.chkActivateTypeStats);
             this.tabPage2.Controls.Add(this.lblPassCount);
@@ -215,11 +195,20 @@
             this.panelStats.Controls.Add(this.Officer);
             this.panelStats.Controls.Add(this.Employee);
             this.panelStats.Controls.Add(this.Student);
-            this.panelStats.Location = new System.Drawing.Point(35, 167);
+            this.panelStats.Location = new System.Drawing.Point(34, 210);
             this.panelStats.Name = "panelStats";
             this.panelStats.Size = new System.Drawing.Size(444, 71);
             this.panelStats.TabIndex = 10;
             this.panelStats.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(182, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Cantidad:";
             // 
             // tbTypeSum
             // 
@@ -292,7 +281,7 @@
             // chkActivateTypeStats
             // 
             this.chkActivateTypeStats.AutoSize = true;
-            this.chkActivateTypeStats.Location = new System.Drawing.Point(35, 133);
+            this.chkActivateTypeStats.Location = new System.Drawing.Point(34, 176);
             this.chkActivateTypeStats.Name = "chkActivateTypeStats";
             this.chkActivateTypeStats.Size = new System.Drawing.Size(215, 17);
             this.chkActivateTypeStats.TabIndex = 9;
@@ -371,14 +360,53 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Estación más concurrida: ";
             // 
-            // label6
+            // firstName
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(182, 49);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Cantidad:";
+            this.firstName.HeaderText = "Nombre";
+            this.firstName.Name = "firstName";
+            // 
+            // lastName
+            // 
+            this.lastName.HeaderText = "Apellido";
+            this.lastName.Name = "lastName";
+            // 
+            // Birth
+            // 
+            this.Birth.HeaderText = "Fecha Nac.";
+            this.Birth.Name = "Birth";
+            // 
+            // type
+            // 
+            this.type.HeaderText = "Type";
+            this.type.Name = "type";
+            this.type.ReadOnly = true;
+            // 
+            // origin
+            // 
+            this.origin.HeaderText = "Origen";
+            this.origin.Name = "origin";
+            // 
+            // destiny
+            // 
+            this.destiny.HeaderText = "Destino";
+            this.destiny.Name = "destiny";
+            // 
+            // lblStretch
+            // 
+            this.lblStretch.AutoSize = true;
+            this.lblStretch.Location = new System.Drawing.Point(31, 133);
+            this.lblStretch.Name = "lblStretch";
+            this.lblStretch.Size = new System.Drawing.Size(125, 13);
+            this.lblStretch.TabIndex = 11;
+            this.lblStretch.Text = "Tramo con mayor carga: ";
+            // 
+            // tbStretch
+            // 
+            this.tbStretch.Enabled = false;
+            this.tbStretch.Location = new System.Drawing.Point(167, 130);
+            this.tbStretch.Name = "tbStretch";
+            this.tbStretch.Size = new System.Drawing.Size(165, 20);
+            this.tbStretch.TabIndex = 12;
             // 
             // FormStatistics
             // 
@@ -413,11 +441,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgPassengers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn origin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn destiny;
         private System.Windows.Forms.TextBox tbEstacionMasConc;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -435,5 +458,13 @@
         private System.Windows.Forms.CheckBox chkActivateTypeStats;
         private System.Windows.Forms.TextBox tbTypeSum;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Birth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn origin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn destiny;
+        private System.Windows.Forms.TextBox tbStretch;
+        private System.Windows.Forms.Label lblStretch;
     }
 }

@@ -12,6 +12,8 @@ namespace TrainSimulator
         public Student() : base(PassengerTypeEnum.STUDENT, Properties.Resources.student) {
             this.speed = 20;
             this.gender = GenderEnum.MALE;
+            this.minYearThreshold = 2005;
+            this.maxYearThreshold = 2000;
         }
 
         public override String showTypeText()

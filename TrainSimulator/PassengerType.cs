@@ -13,10 +13,22 @@ namespace TrainSimulator
         private Bitmap image;
         protected int speed;
         protected GenderEnum gender;
+        protected int minYearThreshold;
+        protected int maxYearThreshold;
 
         public PassengerType(PassengerTypeEnum type, Bitmap image) {
             this.type = type;
             this.image = image;
+        }
+
+        public DateTime randomBirth()
+        {
+            DateTime end = new DateTime(minYearThreshold, 1, 1);
+            DateTime start = new DateTime(maxYearThreshold, 1, 1);
+            Random gen = new Random();
+
+            int range = (end - start).Days;
+            return start.AddDays(gen.Next(range));
         }
 
         public abstract String showTypeText();

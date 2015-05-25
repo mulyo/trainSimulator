@@ -13,6 +13,8 @@ namespace TrainSimulator
        public Employee() : base(PassengerTypeEnum.EMPLOYEE, Properties.Resources.employee) {
            this.speed = 20;
            this.gender = GenderEnum.FEMALE;
+           this.minYearThreshold = 1990;
+           this.maxYearThreshold = 1975;
        }
 
        public override String showTypeText() {

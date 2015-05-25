@@ -41,8 +41,10 @@
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarEstadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.prbEstado = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
+            this.prbEstado = new System.Windows.Forms.ProgressBar();
+            this.lblProgressTrain = new System.Windows.Forms.Label();
+            this.prbTrain = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.trainPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.railwayPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationsPictureBox)).BeginInit();
@@ -134,6 +136,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblProgressTrain);
+            this.groupBox1.Controls.Add(this.prbTrain);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.prbEstado);
             this.groupBox1.Controls.Add(this.operarGenteBtn);
@@ -142,17 +146,10 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(956, 68);
+            this.groupBox1.Size = new System.Drawing.Size(956, 101);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Comandos";
-            // 
-            // prbEstado
-            // 
-            this.prbEstado.Location = new System.Drawing.Point(507, 20);
-            this.prbEstado.Name = "prbEstado";
-            this.prbEstado.Size = new System.Drawing.Size(437, 32);
-            this.prbEstado.TabIndex = 9;
             // 
             // label1
             // 
@@ -162,6 +159,30 @@
             this.label1.Size = new System.Drawing.Size(132, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Estado de Capacidad ";
+            // 
+            // prbEstado
+            // 
+            this.prbEstado.Location = new System.Drawing.Point(507, 20);
+            this.prbEstado.Name = "prbEstado";
+            this.prbEstado.Size = new System.Drawing.Size(437, 32);
+            this.prbEstado.TabIndex = 9;
+            // 
+            // lblProgressTrain
+            // 
+            this.lblProgressTrain.AutoSize = true;
+            this.lblProgressTrain.Location = new System.Drawing.Point(358, 73);
+            this.lblProgressTrain.Name = "lblProgressTrain";
+            this.lblProgressTrain.Size = new System.Drawing.Size(104, 13);
+            this.lblProgressTrain.TabIndex = 12;
+            this.lblProgressTrain.Text = "Progreso del tren";
+            // 
+            // prbTrain
+            // 
+            this.prbTrain.Location = new System.Drawing.Point(507, 63);
+            this.prbTrain.Maximum = 820;
+            this.prbTrain.Name = "prbTrain";
+            this.prbTrain.Size = new System.Drawing.Size(437, 32);
+            this.prbTrain.TabIndex = 11;
             // 
             // Form1
             // 
@@ -206,6 +227,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ProgressBar prbEstado;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblProgressTrain;
+        private System.Windows.Forms.ProgressBar prbTrain;
     }
 }
 

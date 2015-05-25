@@ -12,6 +12,8 @@ namespace TrainSimulator
         public Disabled() : base(PassengerTypeEnum.DISABLED, Properties.Resources.disabled) {
             this.speed = 20;
             this.gender = GenderEnum.MALE;
+            this.minYearThreshold = 1980;
+            this.maxYearThreshold = 1970;
         }
 
         public override String showTypeText()

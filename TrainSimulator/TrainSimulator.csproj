@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carnet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carnet.Designer.cs">
+      <DependentUpon>Carnet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Disabled.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Form1.cs">
@@ -78,10 +84,14 @@
     <Compile Include="Simulator.cs" />
     <Compile Include="Station.cs" />
     <Compile Include="StationDrawing.cs" />
+    <Compile Include="Stretch.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Train.cs" />
     <Compile Include="TrainDrawing.cs" />
     <Compile Include="TrainState.cs" />
+    <EmbeddedResource Include="Carnet.resx">
+      <DependentUpon>Carnet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

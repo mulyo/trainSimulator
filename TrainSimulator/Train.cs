@@ -9,7 +9,8 @@ namespace TrainSimulator
 {
     public class Train : Operable
     {
-        
+
+        private const int speed = 20;
         private const int capacity = 30;
         private TrainState state;
         private Station currentStation;
@@ -83,6 +84,9 @@ namespace TrainSimulator
             set { currentStation = value; }
         }
 
-        
+        public int Speed
+        {
+            get { return speed; }
+        } 
     }
 }

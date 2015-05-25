@@ -13,6 +13,7 @@ namespace TrainSimulator
         private Place destiny;
         private String firstName;
         private String lastName;
+        private DateTime birth;
 
         public Passenger(String firstName, String lastName, PassengerType type, Place origin, Place destiny)
         {
@@ -21,6 +22,7 @@ namespace TrainSimulator
             this.type = type;
             this.origin = origin;
             this.destiny = destiny;
+            this.birth = type.randomBirth();
         }
 
         public PassengerType Type
@@ -69,6 +71,12 @@ namespace TrainSimulator
         {
             int hash = 13;
             return (hash * 7) + firstName.GetHashCode() + lastName.GetHashCode() + type.GetHashCode();
+        }
+
+        public DateTime Birth
+        {
+            get { return birth; }
+            set { birth = value; }
         }
     }
 }

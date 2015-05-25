@@ -12,6 +12,8 @@ namespace TrainSimulator
         public Officer() : base(PassengerTypeEnum.OFFICER, Properties.Resources.officer) {
             this.speed = 20;
             this.gender = GenderEnum.MALE;
+            this.minYearThreshold = 1980;
+            this.maxYearThreshold = 1960;
         }
 
         public override String showTypeText()
